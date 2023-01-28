@@ -56,7 +56,7 @@ function Login(props) {
                             <label htmlFor="password">password:</label>
                         </div>
 
-                        <input is="password" name="input[pasword]" type="text" value={password} onChange={(evt) => setPassword(evt.target.value)} />
+                        <input is="password" type="password" name="input[pasword]" value={password} onChange={(evt) => setPassword(evt.target.value)} />
 
                     </div>
                     <button className="in-out-button">Submit</button>
