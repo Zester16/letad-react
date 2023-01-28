@@ -1,0 +1,27 @@
+.main-div {
+	display: flex;
+	padding: 20px;
+	justify-content: left;
+}
+
+/* generic card */
+.div-card {
+	background-color: white;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 20px;
+	padding: 20px;
+	margin: 20px;
+	size: 2rem;
+}
+
+.div-side-nav {
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	height: fit-content;
+}
+
+.selected {
+	color: #2196f3;
+	font-size: larger;
+	transition: font-size .6s;
+}

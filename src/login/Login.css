@@ -1,0 +1,41 @@
+.in-out-header {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.main-in-out-div {
+	margin: auto;
+	padding: 30px;
+	display: block;
+	align-items: center;
+	font-size: 1.2rem;
+	justify-content: left;
+	text-align: left;
+	width: fit-content;
+	transform: translate(0%, 20%);
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	text-transform: uppercase;
+}
+
+.in-out-button {
+	margin-top: 10px;
+	padding: 10px;
+	font-size: 1.1rem;
+	font-family: 'Times New Roman', Times, serif;
+	text-transform: uppercase;
+	background-color: #1c313a;
+	color: white;
+	border-radius: 20px;
+}
+
+.in-out-logo {
+	width: 80px;
+}
+
+input {
+	width: 300px;
+}

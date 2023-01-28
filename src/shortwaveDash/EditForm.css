@@ -1,0 +1,11 @@
+.edit-form-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+}
+
+.delete-icon {
+	width: 32px;
+	height: 32px
+}

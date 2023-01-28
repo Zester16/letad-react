@@ -1,0 +1,28 @@
+.log-div {
+
+	display: flex;
+	font-family: 'Overpass Mono', monospace;
+	justify-content: right;
+	align-items: center;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+
+}
+
+/* for top part */
+.div-ele {
+	margin-right: .5rem;
+	text-align: center;
+}
+
+/* for bottom part */
+
+.div-desc {
+	font-family: 'Poppins', sans-serif;
+	margin-right: .5rem;
+	font-size: .8rem;
+	align-items: center;
+	text-align: center;
+
+
+}

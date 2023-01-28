@@ -1,0 +1,23 @@
+.radio-img {
+
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.main-station-div {
+    display: flex;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.station-name {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+}
