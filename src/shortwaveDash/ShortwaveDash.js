@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import useAuth from "../hooks/useAuthHook"
-import Splash from "../Splash"
+import Splash from "../generalRoutes/SplashLoading"
 import "./ShortwaveDash.css"
 import SwStation from "./SwStation"
 import SwLogAddNewLog from "./SwLogAddNewLog.js"
@@ -52,16 +52,21 @@ function ShortwaveDash() {
 
     }
     useEffect(() => {
-        getStationLogData()
-        getSwStations()
-        setSplash(false)
-    }, [splash, jwt])
+        async function setData() {
+            await getStationLogData()
+            await getSwStations()
+            setSplash(false)
+        }
+        setData()
+
+    }, [jwt])
 
     //***Functions doing operations as per child***/
     //for sumbitting shortwave log form to server
     async function submitSwLog(station, date, frequency, description, hours, minutes) {
         //console.log("yeah its working")
         try {
+            setSplash(true)
             const input = { station, frequency, date, description, hours, minutes }
             const submit = await axios.post(`${baseURL}/swlog`, { input: input }, {
                 headers: {
@@ -80,8 +85,10 @@ function ShortwaveDash() {
                 //alert("Details do not match as per specification")
                 throw new Error()
             }
+            setSplash(false)
         }
         catch (error) {
+            setSplash(false)
             console.log(error)
             alert("Details do not match as per specification")
         }
@@ -90,6 +97,7 @@ function ShortwaveDash() {
     //sends updated log to server
     async function updateSwLog(id, station, date, frequency, description, hours, minutes) {
         try {
+            setSplash(true)
             console.log("yeah its working")
             const input = { station, frequency, date, description, hours, minutes }
             const submit = await axios.put(`${baseURL}/swlog/${id}`, { input: input }, {
@@ -108,9 +116,10 @@ function ShortwaveDash() {
                 console.log("error")
                 throw new Error("Some error in form!!! Try Againn")
             }
-
+            setSplash(false)
         }
         catch (error) {
+            setSplash(false)
             console.log(error)
             alert(error)
         }
@@ -122,7 +131,7 @@ function ShortwaveDash() {
     async function submitNewStation(station, description, url, image_url, country, language) {
 
         try {
-
+            setSplash(true)
             const input = {
                 station, description, url, image_url, country, language
             }
@@ -132,17 +141,18 @@ function ShortwaveDash() {
                     "x-access-token": jwt
                 }
             })
-            console.log(submit.data.status)
+            //console.log(submit.data.status)
 
             if (submit.data.status === 200) {
                 getSwStations()
                 setNavState(1)
             }
-
+            setSplash(false)
 
 
         }
         catch (error) {
+            setSplash(false)
             console.log(error)
             alert("duplicte station or some data is not added")
         }
@@ -154,7 +164,7 @@ function ShortwaveDash() {
     async function deleteLog(id) {
         try {
 
-
+            setSplash(true)
             const submit = await axios.delete(`${baseURL}/swlog/${id}`, {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
@@ -167,12 +177,13 @@ function ShortwaveDash() {
                 getStationLogData()
                 setNavState(0)
             }
-
-
+            setSplash(false)
+            throw new Error()
 
         }
         catch (error) {
-            console.log(error)
+            setSplash(false)
+            //console.log(error)
             alert("Some error happened while deleting log")
         }
 
@@ -182,7 +193,7 @@ function ShortwaveDash() {
     async function submitNewStation(station, description, url, image_url, country, language) {
 
         try {
-
+            setSplash(true)
             const input = {
                 station, description, url, image_url, country, language
             }
@@ -193,7 +204,7 @@ function ShortwaveDash() {
                 }
             })
             console.log(submit.data.status)
-
+            setSplash(false)
             if (submit.data.status === 200) {
                 getSwStations()
                 setNavState(1)
@@ -216,6 +227,7 @@ function ShortwaveDash() {
     async function updateStation(id, station, description, url, image_url, country, language) {
 
         try {
+            setSplash(true)
             console.log(id)
             const input = {
                 station, description, url, image_url, country, language
@@ -227,6 +239,7 @@ function ShortwaveDash() {
                     "x-access-token": jwt
                 }
             })
+            setSplash(false)
             console.log(submit.data.status)
 
             if (submit.data.status === 200) {
@@ -242,6 +255,7 @@ function ShortwaveDash() {
         catch (error) {
             console.log(error)
             alert("duplicte station or some data is not added")
+            setSplash(false)
         }
 
 
@@ -250,7 +264,7 @@ function ShortwaveDash() {
     async function deleteStation(id) {
         try {
 
-
+            setSplash(true)
             const submit = await axios.delete(`${baseURL}/shortwave/${id}`, {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
@@ -258,7 +272,7 @@ function ShortwaveDash() {
                 }
             })
             //console.log(submit.data.status)
-
+            setSplash(false)
             if (submit.data.status === 200) {
                 getSwStations()
                 setNavState(1)
@@ -271,6 +285,7 @@ function ShortwaveDash() {
 
         }
         catch (error) {
+            setSplash(false)
             console.log(error)
             alert("Some error happened while deleting log")
         }
