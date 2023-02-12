@@ -12,6 +12,7 @@
 	padding: 20px;
 	margin: 20px;
 	size: 2rem;
+	height: fit-content;
 }
 
 .div-side-nav {

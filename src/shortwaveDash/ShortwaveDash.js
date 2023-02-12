@@ -59,7 +59,7 @@ function ShortwaveDash() {
         }
         setData()
 
-    }, [jwt])
+    }, [jwt, splash])
 
     //***Functions doing operations as per child***/
     //for sumbitting shortwave log form to server
