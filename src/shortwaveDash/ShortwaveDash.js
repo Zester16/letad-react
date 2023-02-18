@@ -59,7 +59,7 @@ function ShortwaveDash() {
         }
         setData()
 
-    }, [jwt, splash])
+    }, [jwt])
 
     //***Functions doing operations as per child***/
     //for sumbitting shortwave log form to server
@@ -351,7 +351,7 @@ function ShortwaveDash() {
             splash ? <Splash /> :
                 <div className="main-div">
                     {/* for side navigation */}
-                    <div className="div-card">
+                    <div className="div-card div-side-nav">
                         {routing.map(el => <div className={`${navState === el.id ? "selected" : ""} div-side-nav`} onClick={() => {
                             setNavState(el.id)
 

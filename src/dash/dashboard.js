@@ -2,6 +2,7 @@ import { React } from "react"
 import "../card.css"
 import radio from "../radio.svg"
 import radioshackle from "../radioshackle.svg"
+import "./Dashboard.css"
 import { useNavigate } from "react-router-dom"
 /**
  * This is primary page which displays dashboard
@@ -13,11 +14,11 @@ function Dashboard() {
 	const navToSWLog = () => { navigate("/shortwave") }
 
 	return (<div className="main-div">
-		<div className="div-card" onClick={navToRadioshackle}>
-			<img src={radioshackle} />
+		<div className="div-card div-card-dash" onClick={navToRadioshackle}>
+			<img className="img-dash-logo" src={radioshackle} />
 			<p>Radioshackle</p>
 		</div>
-		<div className="div-card" onClick={navToSWLog}>
+		<div className="div-card div-card-dash" onClick={navToSWLog}>
 			<img src={radio} />
 			<p>Shortwave</p>
 		</div>

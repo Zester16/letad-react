@@ -1,11 +1,11 @@
-.main-div {
+.g-main-div {
 	display: flex;
 	padding: 20px;
 	justify-content: left;
 }
 
 /* generic card */
-.div-card {
+.g-div-card {
 	background-color: white;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	border-radius: 20px;
@@ -15,7 +15,7 @@
 	height: fit-content;
 }
 
-.div-side-nav {
+.g-div-side-nav {
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;
 	height: fit-content;

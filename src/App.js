@@ -8,7 +8,7 @@ import RequiredAuth from "./RequiredAuth"
 import Nav from "./Nav"
 import ShortwaveDash from './shortwaveDash/ShortwaveDash';
 import Radioshackle from './radioshackleDash/radioshackleDash';
-import Dash from "./dash/dashboard"
+import Dash from "./dash/Dashboard"
 import SwLogEditForm from './shortwaveDash/SwLogEditForm';
 function App() {
   const Test = () => <div>Test</div>

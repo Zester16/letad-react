@@ -16,11 +16,25 @@
 .div-side-nav {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+    width: fit-content;
     height: fit-content;
+
 }
 
 .selected {
     color: #2196f3;
     font-size: larger;
     transition: font-size .6s;
+}
+
+.div-radio-description {
+    max-width: 200px
+}
+
+@media only screen and (max-width:726px) {
+
+    .main-div {
+        display: block;
+    }
+
 }

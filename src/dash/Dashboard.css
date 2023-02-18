@@ -1,0 +1,10 @@
+/* for dashboard logo and corresponding link path */
+.img-dash-logo {
+	width: 48px;
+	height: 48px;
+}
+
+.div-card-dash {
+	display: block;
+	text-align: center;
+}

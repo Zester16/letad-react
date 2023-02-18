@@ -18,11 +18,21 @@
 /* for bottom part */
 
 .div-desc {
+	display: block;
 	font-family: 'Poppins', sans-serif;
 	margin-right: .5rem;
 	font-size: .8rem;
 	align-items: center;
 	text-align: center;
 
+
+}
+
+@media only screen and (max-width:580px) {
+
+	.log-div {
+		display: block;
+		border-bottom: 1px solid black;
+	}
 
 }
