@@ -1,3 +1,12 @@
+/* g stands for global */
+
+/* this is for aligning body in normal fashion with padding */
+.g-main-div-vertical {
+
+	padding: 20px;
+	justify-content: left;
+}
+
 .g-main-div {
 	display: flex;
 	padding: 20px;
