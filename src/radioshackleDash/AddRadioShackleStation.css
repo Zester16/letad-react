@@ -1,0 +1,19 @@
+.form-div-sep {
+	padding: 10px;
+
+}
+
+label {
+	font-style: italic;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin-right: 5px;
+	text-transform: uppercase;
+}
+
+button {
+	border-radius: 10px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	text-transform: uppercase;
+	background-color: #1c313a;
+	color: #fff
+}
