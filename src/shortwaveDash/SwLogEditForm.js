@@ -7,6 +7,11 @@ import "./EditForm.css"
 function SwLogEditForm(props) {
 	// setting pre defined value
 	const dateNormal = new Date(props.log.date * 1000)
+	let day = dateNormal.getDate()
+	let month = dateNormal.getMonth()
+	const year = dateNormal.getFullYear()
+	if (day < 10) day = "0" + day
+	if (month < 10) month = "0" + month
 	const initialStaionPre = props.stations.find(st => st._id === props.log.station)
 	const initialStation = initialStaionPre ? { value: initialStaionPre._id, label: initialStaionPre.station } : {}
 	const [id, setID] = useState(props.log._id)
@@ -15,7 +20,8 @@ function SwLogEditForm(props) {
 	const [frequency, setFrequency] = useState(props.log.frequency)
 	const [hours, setHours] = useState(props.log.hours)
 	const [minutes, setMinutes] = useState(props.log.minutes)
-	const [date, setDate] = useState(dateNormal.toLocaleDateString('en-CA'))
+	//const [date, setDate] = useState(dateNormal.toLocaleDateString('en-CA'))
+	const [date, setDate] = useState(`${year}-${month}-${day}`)
 
 	//state for handeling delete button
 	const [deleteLog, setDeleteLog] = useState(false)
