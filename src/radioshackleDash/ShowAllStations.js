@@ -1,9 +1,16 @@
 import { React, useEffect, useState } from "react"
 import useAuth from "../hooks/useAuthHook"
 import { getAllRadioShackleStations } from "../services/connectRadioShackleServices"
+import RadioShackleIndividualRadio from "./RadioShackleIndividualRadio"
+import UpdateRSStation from "./UpdateRadioShackleStation"
+
 function ShowAllStations(props) {
 
 	const [stations, setStations] = useState([])
+	const [edit, setEdit] = useState(false)
+	const [currentStation, setCurrentStation] = useState({})
+
+
 	//for authentication
 	const { jwt } = useAuth()
 	useEffect(() => {
@@ -15,7 +22,28 @@ function ShowAllStations(props) {
 
 	}, [jwt])
 
+	//sets up update form
+	function onCLickupdateStation(id) {
 
+		const station = stations.find(st => st._id === id)
+		setCurrentStation(station)
+		setEdit(true)
+	}
+	//to remove on update state
+	async function postUpdateStation() {
+		await setRadioshackleData()
+		setEdit(false)
+	}
+	// after a radio station is deleted
+	async function postDeleteStation() {
+		await setRadioshackleData()
+		setEdit(false)
+	}
+	// when close button is clicked
+	function onClickCloseButton() {
+		setEdit(false)
+	}
+	//sets all stations data of radio shackle
 	async function setRadioshackleData() {
 		try {
 			const allStationdata = await getAllRadioShackleStations(jwt)
@@ -27,7 +55,7 @@ function ShowAllStations(props) {
 	}
 	return (<div>
 		<h1>Radioshackle Station List</h1>
-		{stations.map(st => <div>{st.name}</div>)}
+		{edit ? <UpdateRSStation radio={currentStation} postUpdate={postUpdateStation} postDelete={postDeleteStation} closeButton={onClickCloseButton} /> : stations.map(st => <RadioShackleIndividualRadio radio={st} updateStation={onCLickupdateStation} />)}
 
 	</div>)
 

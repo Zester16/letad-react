@@ -90,7 +90,10 @@ function AddRadioshackleStation(props) {
 				if (status) {
 					navigate("/radioshackle/stations")
 				}
-				throw new Error("data is not as per standards")
+				else {
+					throw new Error("data is not as per standards")
+				}
+
 			}
 			else {
 				alert("Data is not filled as requested")
