@@ -26,6 +26,7 @@ export default function RadioShackle(props) {
 		sideNavigation(navState)
 	}, [])
 
+
 	function sideNavigation(id) {
 		setNavState(id)
 
