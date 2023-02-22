@@ -58,3 +58,49 @@ export async function addRadioShackleStation(jwt, stationID, name, country, back
 
 
 }
+
+export async function updateRadioShackleStation(jwt, id, stationID, name, country, background, fav, url, logo, stream, streamType, radioshackle, streamFormat, websiteUrl) {
+	try {
+		const input = { input: { stationID, name, country, background, fav, url, logo, stream, streamType, radioshackle, streamFormat, websiteUrl } }
+		const data = await axios.put(`${baseURL}/radioshackle/${id}`, input, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		})
+		const output = data.data
+		if (output.status === 200) {
+			return true
+		}
+		throw new Error("some error happened")
+	}
+	catch (error) {
+		console.log(error)
+		return false
+	}
+
+
+}
+
+export async function deleteRadioshackleStation(jwt, id) {
+	try {
+		const result = await axios.delete(`${baseURL}/radioshackle/${id}`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		}
+		)
+		console.log(result.data)
+		if (result.data.status === 200) {
+			return true
+		}
+		throw new Error("Some error happened. Station was not deleted")
+	}
+	catch (error) {
+		console.log(error)
+		return false
+
+	}
+
+}

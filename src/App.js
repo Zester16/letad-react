@@ -7,7 +7,7 @@ import { AuthorizationContext } from './hooks/useAuthHook';
 import RequiredAuth from "./RequiredAuth"
 import Nav from "./Nav"
 import ShortwaveDash from './shortwaveDash/ShortwaveDash';
-import Radioshackle from './radioshackleDash/RadioshackleDash';
+import Radioshackle from "./radioshackleDash/RadioshackleDash"
 import Dash from "./dash/Dashboard"
 import SwLogEditForm from './shortwaveDash/SwLogEditForm';
 import AddRadioshackleStation from './radioshackleDash/AddRadioShackleStation';
