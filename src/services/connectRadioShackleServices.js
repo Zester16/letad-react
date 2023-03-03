@@ -81,7 +81,28 @@ export async function updateRadioShackleStation(jwt, id, stationID, name, countr
 
 
 }
+export async function getIndividualRadioStation(jwt, id) {
+	try {
+		const result = await axios.get(`${baseURL}/radioshackle/${id}`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		}
+		)
+		console.log(result.data)
+		if (result.data.status === 200) {
+			return result.data.message
+		}
+		throw new Error("Some error happened. Station was not deleted")
+	}
+	catch (error) {
+		console.log(error)
+		return null
 
+	}
+
+}
 export async function deleteRadioshackleStation(jwt, id) {
 	try {
 		const result = await axios.delete(`${baseURL}/radioshackle/${id}`, {

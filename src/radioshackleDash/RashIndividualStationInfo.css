@@ -1,0 +1,21 @@
+.radio-icon {
+	width: 300px;
+	height: 150px;
+}
+
+.radio-div {
+	display: block;
+	text-align: center;
+	align-items: center;
+}
+
+.description-div {
+	max-width: 400px;
+}
+
+tr {
+	padding: 10px;
+	border-bottom: 2px solid black;
+}
+
+td {}

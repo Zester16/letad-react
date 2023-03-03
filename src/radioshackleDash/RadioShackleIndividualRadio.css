@@ -8,3 +8,17 @@
 	background: black;
 	background-color: #000000;
 }
+
+.main-div {
+	display: flex;
+	align-items: center;
+}
+
+.station-name {
+	font-size: 1.5rem;
+	max-width: 200px;
+}
+
+.button-div {
+	width: 30px;
+}

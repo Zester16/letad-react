@@ -25,7 +25,7 @@ export default function Nav(props) {
             <span className="brand-title">Letad</span>
 
         </div>
-        <span >V 0.0.10</span>
+        <span >V 0.0.11</span>
         <img src={logoutIcon} onClick={logoutOnClick} />
     </div>)
 }

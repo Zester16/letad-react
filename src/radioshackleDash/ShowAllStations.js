@@ -3,13 +3,14 @@ import useAuth from "../hooks/useAuthHook"
 import { getAllRadioShackleStations } from "../services/connectRadioShackleServices"
 import RadioShackleIndividualRadio from "./RadioShackleIndividualRadio"
 import UpdateRSStation from "./UpdateRadioShackleStation"
+import { useNavigate } from "react-router-dom"
 
 function ShowAllStations(props) {
 
 	const [stations, setStations] = useState([])
 	const [edit, setEdit] = useState(false)
 	const [currentStation, setCurrentStation] = useState({})
-
+	const navigate = useNavigate()
 
 	//for authentication
 	const { jwt } = useAuth()
@@ -39,9 +40,14 @@ function ShowAllStations(props) {
 		await setRadioshackleData()
 		setEdit(false)
 	}
-	// when close button is clicked
+	// when close button is clicked on edit form
 	function onClickCloseButton() {
 		setEdit(false)
+	}
+	//navigates to page with a particular radio station
+	function onClickInfoButton(id) {
+
+		navigate(`${id}`)
 	}
 	//sets all stations data of radio shackle
 	async function setRadioshackleData() {
@@ -55,7 +61,7 @@ function ShowAllStations(props) {
 	}
 	return (<div>
 		<h1>Radioshackle Station List</h1>
-		{edit ? <UpdateRSStation radio={currentStation} postUpdate={postUpdateStation} postDelete={postDeleteStation} closeButton={onClickCloseButton} /> : stations.map(st => <RadioShackleIndividualRadio radio={st} updateStation={onCLickupdateStation} />)}
+		{edit ? <UpdateRSStation radio={currentStation} postUpdate={postUpdateStation} postDelete={postDeleteStation} closeButton={onClickCloseButton} /> : stations.map(st => <RadioShackleIndividualRadio radio={st} updateStation={onCLickupdateStation} infoStation={onClickInfoButton} />)}
 
 	</div>)
 

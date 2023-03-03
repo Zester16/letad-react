@@ -12,6 +12,7 @@ import Dash from "./dash/Dashboard"
 import SwLogEditForm from './shortwaveDash/SwLogEditForm';
 import AddRadioshackleStation from './radioshackleDash/AddRadioShackleStation';
 import ShowAllStations from './radioshackleDash/ShowAllStations';
+import RadioShackleIndividualRadioInfo from './radioshackleDash/RashIndividualStationInfo';
 function App() {
   const Test = () => <div>Test</div>
 
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="add" element={<AddRadioshackleStation />} />
             <Route exact path="stations" element={<ShowAllStations />} />
             <Route exact path="check-a-station" element={<Test />} />
+            <Route exact path="stations/:id" element={<RadioShackleIndividualRadioInfo />} />
           </Route>
         </Routes>
       </AuthorizationContext>
