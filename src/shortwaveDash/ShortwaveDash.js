@@ -26,6 +26,7 @@ function ShortwaveDash() {
     const [stationForUpdate, setStationForUpdate] = useState({})
     const [navState, setNavState] = useState(0)
     const [loadMore, setLoadMore] = useState(false)
+    const [page, setPage] = useState(0)
     //for authentication
     const { jwt } = useAuth()
 
@@ -53,10 +54,15 @@ function ShortwaveDash() {
 
     //gets next 10 logs
     async function getNextTenLogs() {
-        const last = swLogs[swLogs.length - 1].date
-        const moreData = await await axios.get(`${baseURL}/swlog/nextten/${last}`, { headers: { "x-access-token": jwt } })
-        setLoadMore(moreData.data.size === 10 ? true : false)
-        setSwLogs([...swLogs, ...moreData.data])
+        if (loadMore) {
+
+            const moreData = await await axios.get(`${baseURL}/swlog/nextten/${page + 1}`, { headers: { "x-access-token": jwt } })
+            console.log(moreData.data.size)
+            setPage(page + 1)
+            setLoadMore(moreData.data.length === 10 ? true : false)
+            setSwLogs([...new Set([...swLogs, ...moreData.data])])
+        }
+
     }
     //gets all station
     async function getSwStations() {
@@ -369,7 +375,7 @@ function ShortwaveDash() {
     return (<div>
         {
             splash ? <Splash /> :
-                <div className="main-div">
+                <div className="sw-main-div">
                     {/* for side navigation */}
                     <div className=" div-side-nav div-card">
                         {routing.map(el => <div className={`${navState === el.id ? "selected" : ""} div-side-nav`} onClick={() => {
