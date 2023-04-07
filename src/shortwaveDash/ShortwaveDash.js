@@ -25,6 +25,7 @@ function ShortwaveDash() {
     const [swLogForUpdate, setSwLogForUpdate] = useState({})
     const [stationForUpdate, setStationForUpdate] = useState({})
     const [navState, setNavState] = useState(0)
+    const [loadMore, setLoadMore] = useState(false)
     //for authentication
     const { jwt } = useAuth()
 
@@ -41,9 +42,21 @@ function ShortwaveDash() {
     //gets station data 
     async function getStationLogData() {
 
-        const initialData = await axios.get(`${baseURL}/swlog`, { headers: { "x-access-token": jwt } })
+        const initialData = await axios.get(`${baseURL}/swlog/topten`, { headers: { "x-access-token": jwt } })
         setSwLogs(initialData.data)
 
+        if (initialData.data.length >= 10) {
+            setLoadMore(true)
+        }
+
+    }
+
+    //gets next 10 logs
+    async function getNextTenLogs() {
+        const last = swLogs[swLogs.length - 1].date
+        const moreData = await await axios.get(`${baseURL}/swlog/nextten/${last}`, { headers: { "x-access-token": jwt } })
+        setLoadMore(moreData.data.size === 10 ? true : false)
+        setSwLogs([...swLogs, ...moreData.data])
     }
     //gets all station
     async function getSwStations() {
@@ -327,7 +340,14 @@ function ShortwaveDash() {
     function returnNavSubjects() {
         switch (navState) {
             case 0:
-                return swLogs.map(sw => <SWLog log={sw} updateLog={setUpdateLog} />)
+                return <div>
+
+                    {swLogs.map(sw => <SWLog log={sw} updateLog={setUpdateLog} />)}
+                    <div>
+                        {loadMore ? <button onClick={() => getNextTenLogs()}>Load More</button> : <></>}
+                    </div>
+
+                </div>
 
             case 1:
                 return swStations.map(sw => <SwStation key={sw.id} station={sw} setUpdateStation={setUpdateStation} />)
@@ -351,7 +371,7 @@ function ShortwaveDash() {
             splash ? <Splash /> :
                 <div className="main-div">
                     {/* for side navigation */}
-                    <div className="div-card div-side-nav">
+                    <div className=" div-side-nav div-card">
                         {routing.map(el => <div className={`${navState === el.id ? "selected" : ""} div-side-nav`} onClick={() => {
                             setNavState(el.id)
 
