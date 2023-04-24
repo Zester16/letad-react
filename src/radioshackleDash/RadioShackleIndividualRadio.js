@@ -2,6 +2,7 @@ import { React } from "react"
 import "./RadioShackleIndividualRadio.css"
 import Edit from "../edit.svg"
 import Info from "../info.svg"
+import setRadioImageBackground from "../utils/commonCssFuntions"
 function RadioShackleIndividualRadio(props) {
 
 	function onClickUpdate(id) {
@@ -15,7 +16,7 @@ function RadioShackleIndividualRadio(props) {
 
 	return (<div className="main-div">
 		<div className={``}>
-			<img className={`radio-img ${props.radio.background == "dark" ? "dark-bg" : ""}`} src={props.radio.logo} />
+			<img className={`radio-img ${setRadioImageBackground(props.radio.background)}`} src={props.radio.logo} />
 
 		</div>
 		<div className="station-name">{props.radio.name}</div>

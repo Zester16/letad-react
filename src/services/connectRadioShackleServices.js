@@ -125,3 +125,37 @@ export async function deleteRadioshackleStation(jwt, id) {
 	}
 
 }
+export async function getRadioShackleStationCount(jwt) {
+
+	try {
+		const result = await axios.get(`${baseURL}/radioshackle/station-count`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		})
+
+		return result.data
+	}
+	catch (error) {
+		console.log(error)
+		return null
+	}
+}
+export async function getRadioShackleAlertList(jwt) {
+
+	try {
+		const result = await axios.get(`${baseURL}/radioshackle-alert`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		})
+
+		return result.data
+	}
+	catch (error) {
+		console.log(error)
+		return null
+	}
+}

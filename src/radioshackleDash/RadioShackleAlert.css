@@ -1,0 +1,14 @@
+.green-circle {
+	/* background-color: greenyellow; */
+	background: linear-gradient(109.6deg, rgb(0, 204, 130) 11.2%, rgb(58, 181, 46) 91.7%);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+
+.red-circle {
+	background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}

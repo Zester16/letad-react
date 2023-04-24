@@ -9,15 +9,17 @@ import "../card.css"
  * gives alerts when there a breakdown in radioshackle station
  * pops out a radio station detail
  */
-export default function RadioShackle(props) {
+export default function RadioShackleHolder(props) {
 	const location = useLocation()
 	const pathname = useLocation().pathname
 	//console.log(location)
 	const navigationPath = [
-		{ id: 0, path: "/radioshackle/stations", title: "all stations" },
-		{ id: 1, path: "/radioshackle/add", title: "add station" },
-		{ id: 2, path: "", title: "search a station" },
-		{ id: 3, path: "/radioshackle/check-a-station", title: "check a station" },
+		{ id: 0, path: "/radioshackle/dash", title: "Dashboard" },
+		{ id: 1, path: "/radioshackle/stations", title: "all stations" },
+		{ id: 2, path: "/radioshackle/add", title: "add station" },
+		{ id: 3, path: "", title: "search a station" },
+		{ id: 4, path: "/radioshackle/check-a-station", title: "check a station" },
+		{ id: 5, path: "", title: "Get Radioshackle Station" },
 	]
 
 	const navigate = useNavigate()
@@ -28,18 +30,21 @@ export default function RadioShackle(props) {
 
 	function sideNavigation(id) {
 		setNavState(id)
-
 		if (id === 0) {
+			navigate("dash")
+		}
+		if (id === 1) {
 			navigate("stations")
 		}
-		else if (id === 1) {
+		else if (id === 2) {
 			navigate("add")
 		}
-		else if (id === 3) {
+		else if (id === 4) {
 			navigate("check-a-station")
 		}
 
 	}
+
 
 	return (
 		<div className="g-main-div-vertical">
