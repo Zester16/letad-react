@@ -8,7 +8,7 @@ import RequiredAuth from "./RequiredAuth"
 import Nav from "./Nav"
 import ShortwaveDash from './shortwaveDash/ShortwaveDash';
 import RadioshackleHolder from "./radioshackleDash/RadioshackleHolder"
-import Dash from "./dash/Dashboard"
+import Dash from "./views/dash/Dashboard"
 import RadioShackleDash from "./radioshackleDash/Dash"
 import AddRadioshackleStation from './radioshackleDash/AddRadioShackleStation';
 import ShowAllStations from './radioshackleDash/ShowAllStations';

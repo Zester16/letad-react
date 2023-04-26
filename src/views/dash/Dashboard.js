@@ -1,7 +1,7 @@
 import { React } from "react"
-import "../card.css"
-import radio from "../radio.svg"
-import radioshackle from "../radioshackle.svg"
+import "../../card.css"
+import radio from "../../assets/images/radio.svg"
+import radioshackle from "../../assets/images/radioshackle.svg"
 import "./Dashboard.css"
 import { useNavigate } from "react-router-dom"
 /**
