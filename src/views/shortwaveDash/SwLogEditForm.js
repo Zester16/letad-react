@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Select from "react-select"
 import { useParams } from "react-router-dom"
-import deleteIcon from "../delete.svg"
+import deleteIcon from "../../assets/images/delete.svg"
 import "./EditForm.css"
 
 function SwLogEditForm(props) {

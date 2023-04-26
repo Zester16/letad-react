@@ -2,9 +2,9 @@
 import { React, useState } from "react"
 import useAuth from "../hooks/useAuthHook"
 import Select from "react-select"
-import deleteIcon from "../delete.svg"
-import closeIcon from "../close.svg"
-import { updateRadioShackleStation, deleteRadioshackleStation } from "../services/connectRadioShackleServices"
+import deleteIcon from "../../assets/images/delete.svg"
+import closeIcon from "../../assets/images/close.svg"
+import { updateRadioShackleStation, deleteRadioshackleStation } from "../../services/connectRadioShackleServices"
 
 function UpdateRSStation(props) {
 	const [id, setId] = useState(props.radio._id)

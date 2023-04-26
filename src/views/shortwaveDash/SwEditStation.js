@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import deleteIcon from "../delete.svg"
+import deleteIcon from "../../assets/images/delete.svg"
 import "./EditForm.css"
 
 /*

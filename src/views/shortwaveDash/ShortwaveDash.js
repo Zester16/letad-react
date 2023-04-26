@@ -3,8 +3,8 @@
 
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import useAuth from "../hooks/useAuthHook"
-import Splash from "../generalRoutes/SplashLoading"
+import useAuth from "../../hooks/useAuthHook"
+import Splash from "../../generalRoutes/SplashLoading"
 import "./ShortwaveDash.css"
 import SwStation from "./SwStation"
 import SwLogAddNewLog from "./SwLogAddNewLog.js"
@@ -13,7 +13,7 @@ import SWAddNewStation from "./SWAddNewStation"
 import SwLogEditForm from "./SwLogEditForm"
 import SwEditStation from "./SwEditStation"
 
-const baseURL = require("../url/baseUrl").baseUrl
+const baseURL = require("../..//url/baseUrl").baseUrl
 function ShortwaveDash() {
 
 

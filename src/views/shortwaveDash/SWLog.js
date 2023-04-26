@@ -3,7 +3,7 @@
  * displays logo, station name, frequency, and time of listening
 */
 import "./SWLog.css"
-import editIcon from "../edit.svg"
+import editIcon from "../../assets/images/edit.svg"
 import React from "react"
 // child for showcasing logs of data
 function SWLog(props) {

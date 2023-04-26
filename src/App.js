@@ -6,7 +6,7 @@ import Login from "./login/Login"
 import { AuthorizationContext } from './hooks/useAuthHook';
 import RequiredAuth from "./RequiredAuth"
 import Nav from "./Nav"
-import ShortwaveDash from './shortwaveDash/ShortwaveDash';
+import ShortwaveDash from './views/shortwaveDash/ShortwaveDash';
 import RadioshackleHolder from "./radioshackleDash/RadioshackleHolder"
 import Dash from "./views/dash/Dashboard"
 import RadioShackleDash from "./radioshackleDash/Dash"

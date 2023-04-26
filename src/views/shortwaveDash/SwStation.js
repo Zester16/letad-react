@@ -1,7 +1,7 @@
 import React from "react"
 import "./SwStation.css"
-import edit from "../edit.svg"
-import info from "../info.svg"
+import edit from "../../assets/images/edit.svg"
+import info from "../../assets/images/info.svg"
 /**
  * 
  * this child is for showcasing individual radio shortwave station  
