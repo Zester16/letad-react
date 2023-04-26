@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react"
-import useAuth from "../hooks/useAuthHook"
-import { getAllRadioShackleStations } from "../services/connectRadioShackleServices"
+import useAuth from "../../hooks/useAuthHook"
+import { getAllRadioShackleStations } from "../../services/connectRadioShackleServices"
 import RadioShackleIndividualRadio from "./RadioShackleIndividualRadio"
 import UpdateRSStation from "./UpdateRadioShackleStation"
 import { useNavigate } from "react-router-dom"

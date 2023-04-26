@@ -7,13 +7,13 @@ import { AuthorizationContext } from './hooks/useAuthHook';
 import RequiredAuth from "./RequiredAuth"
 import Nav from "./Nav"
 import ShortwaveDash from './views/shortwaveDash/ShortwaveDash';
-import RadioshackleHolder from "./radioshackleDash/RadioshackleHolder"
+import RadioshackleHolder from "./views/radioshackleDash/RadioshackleHolder"
 import Dash from "./views/dash/Dashboard"
-import RadioShackleDash from "./radioshackleDash/Dash"
-import AddRadioshackleStation from './radioshackleDash/AddRadioShackleStation';
-import ShowAllStations from './radioshackleDash/ShowAllStations';
-import RadioShackleIndividualRadioInfo from './radioshackleDash/RashIndividualStationInfo';
-import CheckAStation from './radioshackleDash/CheckAStation';
+import RadioShackleDash from "./views/radioshackleDash/Dash"
+import AddRadioshackleStation from './views/radioshackleDash/AddRadioShackleStation';
+import ShowAllStations from './views/radioshackleDash/ShowAllStations';
+import RadioShackleIndividualRadioInfo from './views/radioshackleDash/RashIndividualStationInfo';
+import CheckAStation from './views/radioshackleDash/CheckAStation';
 function App() {
   const Test = () => <div>Test</div>
 

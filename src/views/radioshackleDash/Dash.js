@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react"
-import useAuth from "../hooks/useAuthHook"
-import { getRadioShackleAlertList, getRadioShackleStationCount } from "../services/connectRadioShackleServices"
+import useAuth from "../../hooks/useAuthHook"
+import { getRadioShackleAlertList, getRadioShackleStationCount } from "../../services/connectRadioShackleServices"
 import RadioShackleAlert from "./RadioShackleAlert"
 
 /**

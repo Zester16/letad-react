@@ -1,7 +1,7 @@
 import { React } from "react"
 import "./RadioShackleAlert.css"
 import "./RadioShackleIndividualRadio.css"
-import setRadioImageBackground from "../utils/commonCssFuntions"
+import setRadioImageBackground from "../../utils/commonCssFuntions"
 
 export default function RadioShackleAlert(props) {
 

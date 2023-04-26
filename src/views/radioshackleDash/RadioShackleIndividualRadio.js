@@ -2,7 +2,7 @@ import { React } from "react"
 import "./RadioShackleIndividualRadio.css"
 import Edit from "../../assets/images/edit.svg"
 import Info from "../../assets/images/info.svg"
-import setRadioImageBackground from "../utils/commonCssFuntions"
+import setRadioImageBackground from "../../utils/commonCssFuntions"
 function RadioShackleIndividualRadio(props) {
 
 	function onClickUpdate(id) {

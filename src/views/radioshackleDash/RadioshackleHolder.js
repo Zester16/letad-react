@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react"
 import { Outlet, Routes, Route, useNavigate, } from "react-router-dom"
 import { useParams, useLocation } from "react-router-dom"
-import "../card.css"
+import "../../card.css"
 /**
  * 
  * @returns this is radio shackle route, where it displays around 50-100 radio stations

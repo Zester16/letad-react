@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from "react"
-import useAuth from "../hooks/useAuthHook"
+import useAuth from "../../hooks/useAuthHook"
 import { useParams, useNavigate } from "react-router-dom"
-import { getIndividualRadioStation } from "../services/connectRadioShackleServices"
+import { getIndividualRadioStation } from "../../services/connectRadioShackleServices"
 import Flag from 'react-world-flags'
-import Close from "../close.svg"
+import Close from "../../assets/images/close.svg"
 import "./RashIndividualStationInfo.css"
 /**
  * Displays individual radio shackle radio station

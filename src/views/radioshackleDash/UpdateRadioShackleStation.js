@@ -1,6 +1,6 @@
 //div variable
 import { React, useState } from "react"
-import useAuth from "../hooks/useAuthHook"
+import useAuth from "../../hooks/useAuthHook"
 import Select from "react-select"
 import deleteIcon from "../../assets/images/delete.svg"
 import closeIcon from "../../assets/images/close.svg"

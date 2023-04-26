@@ -1,7 +1,7 @@
 import { React, useState } from "react"
-import useAuth from "../hooks/useAuthHook"
+import useAuth from "../../hooks/useAuthHook"
 import Select from "react-select"
-import { checkRadioShackleStation, addRadioShackleStation } from "../services/connectRadioShackleServices"
+import { checkRadioShackleStation, addRadioShackleStation } from "../../services/connectRadioShackleServices"
 import "./AddRadioShackleStation.css"
 import { useNavigate } from "react-router-dom"
 
