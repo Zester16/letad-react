@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
-import useAuth from "./hooks/useAuthHook"
-import logoutIcon from "./logout.svg"
-import logo from "./LETAD.svg"
+import useAuth from "../../hooks/useAuthHook"
+import logoutIcon from "../../assets/images/logout.svg"
+import logo from "../../assets/images/LETAD.svg"
 import { useNavigate } from "react-router-dom"
 import "./Nav.css"
 //handles nav component

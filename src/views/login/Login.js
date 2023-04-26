@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios"
-import useAuth from "../hooks/useAuthHook"
+import useAuth from "../../hooks/useAuthHook"
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import brandLogo from "../LETAD.svg"
-const url = require("../url/baseUrl").baseUrl
+import brandLogo from "../../assets/images/LETAD.svg"
+const url = require("../../url/baseUrl").baseUrl
 
 
 function Login(props) {

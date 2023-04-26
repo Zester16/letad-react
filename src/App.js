@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route } from "react-router-dom"
-import Splash from "./Splash"
-import Login from "./login/Login"
+import Login from "./views/login/Login"
 import { AuthorizationContext } from './hooks/useAuthHook';
 import RequiredAuth from "./RequiredAuth"
-import Nav from "./Nav"
+import Nav from "./views/navbar/Nav"
 import ShortwaveDash from './views/shortwaveDash/ShortwaveDash';
 import RadioshackleHolder from "./views/radioshackleDash/RadioshackleHolder"
 import Dash from "./views/dash/Dashboard"
