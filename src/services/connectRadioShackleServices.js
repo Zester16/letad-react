@@ -159,3 +159,27 @@ export async function getRadioShackleAlertList(jwt) {
 		return null
 	}
 }
+
+/**
+ * returns
+ * @param {*} jwt 
+ * @returns JSON of radioshackle stations 
+ */
+
+export async function downloadRadioShackleStations(jwt) {
+
+	try {
+		const result = await axios.get(`${baseURL}/radioshackle-alert/download-station`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		})
+
+		return result.data
+	}
+	catch (error) {
+		console.log(error)
+		return null
+	}
+}

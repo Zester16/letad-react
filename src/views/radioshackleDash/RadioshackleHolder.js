@@ -19,7 +19,7 @@ export default function RadioShackleHolder(props) {
 		{ id: 2, path: "/radioshackle/add", title: "add station" },
 		{ id: 3, path: "", title: "search a station" },
 		{ id: 4, path: "/radioshackle/check-a-station", title: "check a station" },
-		{ id: 5, path: "", title: "Get Radioshackle Station" },
+		{ id: 5, path: "/radioshackle/download-station", title: "Download Radioshackle Stations" },
 	]
 
 	const navigate = useNavigate()
@@ -41,6 +41,9 @@ export default function RadioShackleHolder(props) {
 		}
 		else if (id === 4) {
 			navigate("check-a-station")
+		}
+		else if (id === 5) {
+			navigate("download-station")
 		}
 
 	}

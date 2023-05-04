@@ -63,7 +63,6 @@ function RadioShackleDash() {
 
 		</div>
 		<div>
-			Alerts
 			<div>
 				<table >
 					<tr>
