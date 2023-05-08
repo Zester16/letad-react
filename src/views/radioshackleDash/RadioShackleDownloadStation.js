@@ -2,6 +2,10 @@ import { React, useState, useEffect } from "react"
 import useAuth from "../../hooks/useAuthHook"
 import { downloadRadioShackleStations } from "../../services/connectRadioShackleServices"
 
+/**
+ * Page for downloading radioshackle station list
+ * @returns 
+ */
 export default function RadioShackleDownloadStation() {
 	const { jwt } = useAuth()
 	const [file, setFile] = useState({})

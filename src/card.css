@@ -24,6 +24,15 @@
 	height: fit-content;
 }
 
+/* card view with div matching width*/
+
+
+.g-div-flex {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
 .g-div-side-nav {
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;

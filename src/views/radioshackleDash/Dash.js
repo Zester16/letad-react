@@ -2,6 +2,10 @@ import { React, useEffect, useState } from "react"
 import useAuth from "../../hooks/useAuthHook"
 import { getRadioShackleAlertList, getRadioShackleStationCount } from "../../services/connectRadioShackleServices"
 import RadioShackleAlert from "./RadioShackleAlert"
+import imageLogo from "../../assets/images/image.svg"
+import streamLogo from "../../assets/images/stream.svg"
+import musicLogo from "../../assets/images/music.svg"
+import expandLogo from "../../assets/images/expand.svg"
 
 /**
  * this is Dashboard for radio shackle which will display 
@@ -47,14 +51,14 @@ function RadioShackleDash() {
 	}
 	return (<div>
 
-		<div>
-			<div>
+		<div className="g-div-flex">
+			<div className="g-div-card">
 				{countAllStations}
 				<div>
 					All Stations
 				</div>
 			</div>
-			<div>
+			<div className="g-div-card">
 				{countAlert}
 				<div>
 					Stations with Issues
@@ -66,12 +70,12 @@ function RadioShackleDash() {
 			<div>
 				<table >
 					<tr>
-						<th>Logo</th>
 						<th>Station Name</th>
-						<th>Stream</th>
-						<th>Image</th>
-						<th>Now Playing</th>
-						<th>expand</th>
+						<th>Logo </th>
+						<th><img src={musicLogo} /></th>
+						<th><img src={imageLogo} /></th>
+						<th><img src={streamLogo} /></th>
+						<th><img src={expandLogo} /></th>
 
 					</tr>
 					{alertList.map(alert => <RadioShackleAlert issue={alert} />)}
