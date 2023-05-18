@@ -4,12 +4,14 @@ import { getAllRadioShackleStations } from "../../services/connectRadioShackleSe
 import RadioShackleIndividualRadio from "./RadioShackleIndividualRadio"
 import UpdateRSStation from "./UpdateRadioShackleStation"
 import { useNavigate } from "react-router-dom"
+import SplashLoading from "../../generalRoutes/SplashLoading"
 
 function ShowAllStations(props) {
 
 	const [stations, setStations] = useState([])
 	const [edit, setEdit] = useState(false)
 	const [currentStation, setCurrentStation] = useState({})
+	const [splash, setSplash] = useState(false)
 	const navigate = useNavigate()
 
 	//for authentication
@@ -51,15 +53,18 @@ function ShowAllStations(props) {
 	}
 	//sets all stations data of radio shackle
 	async function setRadioshackleData() {
+		setSplash(true)
 		try {
 			const allStationdata = await getAllRadioShackleStations(jwt)
 			setStations(allStationdata)
+			setSplash(false)
 		}
 		catch (error) {
 			console.log(error)
+			setSplash(false)
 		}
 	}
-	return (<div>
+	return (splash ? <SplashLoading></SplashLoading> : <div>
 		<h1>Radioshackle Station List</h1>
 		{edit ? <UpdateRSStation radio={currentStation} postUpdate={postUpdateStation} postDelete={postDeleteStation} closeButton={onClickCloseButton} /> : stations.map(st => <RadioShackleIndividualRadio radio={st} updateStation={onCLickupdateStation} infoStation={onClickInfoButton} />)}
 
