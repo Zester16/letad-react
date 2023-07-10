@@ -14,6 +14,7 @@ import RadioShackleIndividualRadioInfo from './views/radioshackleDash/RashIndivi
 import CheckAStation from './views/radioshackleDash/CheckAStation';
 import RadioShackleDownloadStation from './views/radioshackleDash/RadioShackleDownloadStation';
 import KibanaDash from './views/kibanaDash/KibanaDash';
+import KibanaIndividualLog from './views/kibanaDash/KibanaIndividualLog';
 function App() {
   const Test = () => <div>Test</div>
 
@@ -37,7 +38,8 @@ function App() {
             <Route exact path="/radioshackle/download-station" element={<RadioShackleDownloadStation />} />
 
           </Route>
-          <Route exact path="/kibana" element={<KibanaDash />} />
+          <Route exact path="/kibana" element={<RequiredAuth><KibanaDash /></RequiredAuth>} >
+          </Route>
         </Routes>
       </AuthorizationContext>
     </div >
