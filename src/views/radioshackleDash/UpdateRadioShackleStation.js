@@ -37,6 +37,8 @@ function UpdateRSStation(props) {
 	{ value: "dark", label: "dark" },
 	{ value: "virgin", label: "virgin" },
 	{ value: "classic", label: "classic" },
+	{ value: "test-white", label: "test light" },
+	{ value: "test-dark", label: "test dark" },
 	]
 	const defaultBackground = radioshackleBackground.find(bg => bg.value == background)
 	const radioshackleStreamFormat = [

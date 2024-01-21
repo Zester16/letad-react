@@ -34,6 +34,8 @@ function AddRadioshackleStation(props) {
 	{ value: "dark", label: "dark" },
 	{ value: "virgin", label: "virgin" },
 	{ value: "classic", label: "classic" },
+	{ value: "test-white", label: "test light" },
+	{ value: "test-dark", label: "test dark" },
 	]
 	const radioshackleStreamFormat = [
 		{

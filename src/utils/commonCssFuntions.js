@@ -5,6 +5,6 @@
  * if logo of radioshation is white, it will set background as black
  */
 export default function setRadioImageBackground(background) {
-	return ` ${background == "dark" ? "dark-bg" : ""}`
+	return ` ${(background == "dark" || background == "test-dark") ? "dark-bg" : ""}`
 
 }

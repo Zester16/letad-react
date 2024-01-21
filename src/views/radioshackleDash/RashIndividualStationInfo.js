@@ -5,6 +5,7 @@ import { getIndividualRadioStation } from "../../services/connectRadioShackleSer
 import Flag from 'react-world-flags'
 import Close from "../../assets/images/close.svg"
 import "./RashIndividualStationInfo.css"
+import setRadioImageBackground from "../../utils/commonCssFuntions"
 /**
  * Displays individual radio shackle radio station
  * @param {*} props 
@@ -36,7 +37,7 @@ function RadioShackleIndividualRadioInfo(props) {
 		}
 	}
 	return (<div className="radio-div">
-		<img className={`radio-icon ${station?.background == "dark" ? "dark-bg" : ""}`} src={station?.logo} />
+		<img className={`radio-icon ${setRadioImageBackground(station?.background)}`} src={station?.logo} />
 		<div>
 			<Flag code={station?.country} height={32} />
 			<img src={Close} onClick={() => { navigate(-1) }} />

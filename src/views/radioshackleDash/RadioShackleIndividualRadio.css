@@ -1,6 +1,9 @@
 .radio-img {
 	width: 75px;
 	height: 50px;
+	border-radius: 10px;
+	padding: 5px;
+	margin-right: 10px;
 
 }
 
