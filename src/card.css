@@ -26,6 +26,9 @@
 
 /* card view with div matching width*/
 
+.pointer {
+	cursor: pointer;
+}
 
 .g-div-flex {
 	display: flex;

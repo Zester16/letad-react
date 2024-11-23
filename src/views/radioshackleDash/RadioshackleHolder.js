@@ -54,7 +54,7 @@ export default function RadioShackleHolder(props) {
 			<div>ALERTS</div>
 			<div className="g-main-div">
 				<div className="g-div-card g-side-nav">
-					{navigationPath.map(ele => <div className={`${pathname === ele.path ? "selected" : ""} div-side-nav`} key={ele.id} onClick={() => sideNavigation(ele.id)}>{ele.title}</div>)}
+					{navigationPath.map(ele => <div className={`${pathname === ele.path ? "selected" : ""} div-side-nav pointer`} key={ele.id} onClick={() => sideNavigation(ele.id)}>{ele.title}</div>)}
 				</div>
 				<div className="g-div-card">
 					<Outlet />

@@ -378,7 +378,7 @@ function ShortwaveDash() {
                 <div className="sw-main-div">
                     {/* for side navigation */}
                     <div className=" div-side-nav div-card">
-                        {routing.map(el => <div className={`${navState === el.id ? "selected" : ""} div-side-nav`} onClick={() => {
+                        {routing.map(el => <div className={`${navState === el.id ? "selected" : ""} div-side-nav pointer`} onClick={() => {
                             setNavState(el.id)
 
                         }}>{el.title}</div>)}
