@@ -8,7 +8,7 @@ import SplashLoading from "../../generalRoutes/SplashLoading"
 
 function ShowAllStations(props) {
 
-	const [stations, setStations] = useState([])
+	const [stations, setStations] = useState(props.inputStations ?? [])
 	const [edit, setEdit] = useState(false)
 	const [currentStation, setCurrentStation] = useState({})
 	const [splash, setSplash] = useState(false)
@@ -18,7 +18,13 @@ function ShowAllStations(props) {
 	const { jwt } = useAuth()
 	useEffect(() => {
 		async function init() {
-			setRadioshackleData()
+			if (!props.inputStations) {
+				setRadioshackleData()
+			} else {
+				//console.log(props.stations.length)
+				setStations(props.inputStations)
+			}
+
 		}
 		init()
 

@@ -37,6 +37,7 @@ function App() {
             <Route exact path="search" element={<RadioShackleRandomSearch />} />
             <Route exact path="check-a-station" element={<CheckAStation />} />
             <Route exact path="stations/:id" element={<RadioShackleIndividualRadioInfo />} />
+            <Route exact path="search/:id" element={<RadioShackleIndividualRadioInfo />} />
             <Route exact path="/radioshackle/download-station" element={<RadioShackleDownloadStation />} />
 
           </Route>
