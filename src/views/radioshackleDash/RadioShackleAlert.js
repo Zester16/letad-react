@@ -13,7 +13,7 @@ export default function RadioShackleAlert(props) {
 
 	function expandButtonOnClick() {
 		const template = ` url issue: ${props.issue.url_error}
-		image issue: ${props.issue.image_error}
+		image issue: ${props.issue.logo_error}
 		stream issue: ${props.issue.stream_error}
 `
 		alert(template)
