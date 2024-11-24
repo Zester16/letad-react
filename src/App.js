@@ -11,6 +11,7 @@ import RadioShackleDash from "./views/radioshackleDash/Dash"
 import AddRadioshackleStation from './views/radioshackleDash/AddRadioShackleStation';
 import ShowAllStations from './views/radioshackleDash/ShowAllStations';
 import RadioShackleIndividualRadioInfo from './views/radioshackleDash/RashIndividualStationInfo';
+import RadioShackleRandomSearch from './views/radioshackleDash/RadioShackleRandomSearch';
 import CheckAStation from './views/radioshackleDash/CheckAStation';
 import RadioShackleDownloadStation from './views/radioshackleDash/RadioShackleDownloadStation';
 import KibanaDash from './views/kibanaDash/KibanaDash';
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="dash" element={<RadioShackleDash />} />
             <Route exact path="add" element={<AddRadioshackleStation />} />
             <Route exact path="stations" element={<ShowAllStations />} />
+            <Route exact path="search" element={<RadioShackleRandomSearch />} />
             <Route exact path="check-a-station" element={<CheckAStation />} />
             <Route exact path="stations/:id" element={<RadioShackleIndividualRadioInfo />} />
             <Route exact path="/radioshackle/download-station" element={<RadioShackleDownloadStation />} />

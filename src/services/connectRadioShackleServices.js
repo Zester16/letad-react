@@ -161,6 +161,33 @@ export async function getRadioShackleAlertList(jwt) {
 }
 
 /**
+ * function does a partial search of radiostations 
+ * @param {*} jwt 
+ * @returns 
+ */
+export async function getRadioShackleSearchStations(jwt, input) {
+
+	try {
+
+		const result = await axios.get(`${baseURL}/radioshackle/partial-search?name=${input}`, {
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"x-access-token": jwt
+			}
+		})
+
+		return result.data
+	}
+
+
+	catch (error) {
+		console.log(error)
+		return null
+	}
+
+}
+
+/**
  * returns
  * @param {*} jwt 
  * @returns JSON of radioshackle stations 

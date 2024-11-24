@@ -17,7 +17,7 @@ export default function RadioShackleHolder(props) {
 		{ id: 0, path: "/radioshackle/dash", title: "Dashboard" },
 		{ id: 1, path: "/radioshackle/stations", title: "all stations" },
 		{ id: 2, path: "/radioshackle/add", title: "add station" },
-		{ id: 3, path: "", title: "search a station" },
+		{ id: 3, path: "/radioshackle/search", title: "search a station" },
 		{ id: 4, path: "/radioshackle/check-a-station", title: "check a station" },
 		{ id: 5, path: "/radioshackle/download-station", title: "Download Radioshackle Stations" },
 	]
@@ -38,6 +38,9 @@ export default function RadioShackleHolder(props) {
 		}
 		else if (id === 2) {
 			navigate("add")
+		}
+		else if (id === 3) {
+			navigate("search")
 		}
 		else if (id === 4) {
 			navigate("check-a-station")
